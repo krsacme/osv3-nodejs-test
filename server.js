@@ -11,7 +11,7 @@ app.get('/', function(req, res) {
 
 app.get('/write', function(req, res) {
 
-  fs.writeFile('/var/lib/test/' + process.env.OPENSHIFT_BUILD_NAMESPACE + '.txt', process.env, function(err) {
+  fs.writeFile('/var/lib/test/' + process.env.HOSTNAME + '.txt', JSON.stringify(process.env), function(err) {
     console.log('file written');
   }); 
   res.send('write success \n');
